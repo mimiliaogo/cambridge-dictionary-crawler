@@ -8,19 +8,19 @@ def Dic(word):
     html = r.text
     page = etree.HTML(html)
     # eng def
-    endefs = page.xpath('//b[@class="def"]')
+    endefs = page.xpath('//*[@id="page-content"]/div[2]/div[4]/div/div/div[1]/div[3]/div/div[2]/div[1]/div[2]/div')
     endef = endefs[0].xpath('string(.)')
     # chi def
     # xpath will return a list
-    chdef = page.xpath('//*[@id="english-chinese-traditional-1-1-1"]/div/div[1]/span/span')
+    chdef = page.xpath('//*[@id="page-content"]/div[2]/div[4]/div/div/div[1]/div[3]/div/div[2]/div[1]/div[3]/span')
     chdefstr = chdef[0].xpath('string(.)')
     print('Definition:\n',endef.strip(), '\n',chdefstr.strip())
 
     # eng sentence
-    enstc = page.xpath('//*[@id="english-chinese-traditional-1-1-1"]/div/div[1]/span/div[1]/span[1]')
+    enstc = page.xpath('//*[@id="page-content"]/div[2]/div[4]/div/div/div[1]/div[3]/div/div[2]/div[1]/div[3]/div[1]/span[1]')
     enstcstr = enstc[0].xpath('string(.)')
     # chi sentence
-    chstc = page.xpath('//*[@id="english-chinese-traditional-1-1-1"]/div/div[1]/span/div[1]/span[2]')
+    chstc = page.xpath('//*[@id="page-content"]/div[2]/div[4]/div/div/div[1]/div[3]/div/div[2]/div[1]/div[3]/div[1]/span[2]')
     chstcstr = chstc[0].xpath('string(.)')
 
     print('Sentence:\n', enstcstr.strip(),'\n', chstcstr.strip())
