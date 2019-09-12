@@ -1,5 +1,11 @@
 # cambridge-dictionary-crawler
 My first web crawler. This project let you use command line to look up Cambridge dictionary instead of using browser yourself.
+## !! New features
+After looking up to the dictionary, you can store the word to the excel file. When next time you want to review it, it's handy. 
+### steps
+* new an vocabulary file 
+* refer the cell position with your code to personalize your vocabulary list.
+* attachment excel file is a sample.
 ## Tools used in the project
 ``requests``, ``lxml``, ``xpath``
 ## Run in the command line
